@@ -10,7 +10,6 @@ const botonVaciar = document.querySelector("#carrito-acciones-vaciar");
 const contenedorTotal = document.querySelector("#total");
 const botonComprar = document.querySelector("#carrito-acciones-comprar");
 
-
 function cargarProductosCarrito() {
     if (productosEnCarrito && productosEnCarrito.length > 0) {
 
@@ -18,11 +17,11 @@ function cargarProductosCarrito() {
         contenedorCarritoProductos.classList.remove("disabled");
         contenedorCarritoAcciones.classList.remove("disabled");
         contenedorCarritoComprado.classList.add("disabled");
-    
+
         contenedorCarritoProductos.innerHTML = "";
-    
+
         productosEnCarrito.forEach(producto => {
-    
+
             const div = document.createElement("div");
             div.classList.add("carrito-producto");
             div.innerHTML = `
@@ -45,13 +44,13 @@ function cargarProductosCarrito() {
                 </div>
                 <button class="carrito-producto-eliminar" id="${producto.id}"><i class="bi bi-trash-fill"></i></button>
             `;
-    
+
             contenedorCarritoProductos.append(div);
-        })
-    
-    actualizarBotonesEliminar();
-    actualizarTotal();
-	
+        });
+
+        actualizarBotonesEliminar();
+        actualizarTotal();
+
     } else {
         contenedorCarritoVacio.classList.remove("disabled");
         contenedorCarritoProductos.classList.add("disabled");
@@ -76,9 +75,9 @@ function eliminarDelCarrito(e) {
         text: "Producto eliminado",
         duration: 3000,
         close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
         style: {
           background: "linear-gradient(to right, #4b33a8, #785ce9)",
           borderRadius: "2rem",
@@ -86,10 +85,10 @@ function eliminarDelCarrito(e) {
           fontSize: ".75rem"
         },
         offset: {
-            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+            x: '1.5rem',
+            y: '1.5rem'
           },
-        onClick: function(){} // Callback after click
+        onClick: function(){}
       }).showToast();
 
     const idBoton = e.currentTarget.id;
@@ -119,24 +118,35 @@ function vaciarCarrito() {
             localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
             cargarProductosCarrito();
         }
-      })
+      });
 }
-
 
 function actualizarTotal() {
     const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
-    total.innerText = `$${totalCalculado}`;
+    contenedorTotal.innerText = `$${totalCalculado}`;
 }
 
 botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
+    const mensaje = generarMensajeWhatsApp();
+    const numeroWhatsApp = '920449772';
+    const url = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
+    window.open(url, '_blank');
 
     productosEnCarrito.length = 0;
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-    
+
     contenedorCarritoVacio.classList.add("disabled");
     contenedorCarritoProductos.classList.add("disabled");
     contenedorCarritoAcciones.classList.add("disabled");
     contenedorCarritoComprado.classList.remove("disabled");
+}
 
+function generarMensajeWhatsApp() {
+    let mensaje = 'Hola, me gustaría comprar los siguientes productos:\n\n';
+    productosEnCarrito.forEach(producto => {
+        mensaje += `- ${producto.titulo} x${producto.cantidad}: $${producto.precio * producto.cantidad}\n`;
+    });
+    mensaje += `\nTotal: ${contenedorTotal.innerText}`;
+    return mensaje;
 }

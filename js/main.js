@@ -26,24 +26,33 @@ searchInput.addEventListener("keypress", function(e) {
 
 // Función para cargar productos en el contenedor
 function cargarProductos(productosElegidos) {
-    contenedorProductos.innerHTML = "";
+    if (productosElegidos.length === 0) {
+        mostrarMensajeNoProductos();
+    } else {
+        contenedorProductos.innerHTML = "";
 
-    productosElegidos.forEach(producto => {
-        const div = document.createElement("div");
-        div.classList.add("producto");
-        div.innerHTML = `
-            <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
-            <div class="producto-detalles">
-                <h3 class="producto-titulo">${producto.titulo}</h3>
-                <p class="producto-precio">$${producto.precio}</p>
-                <button class="producto-agregar" id="${producto.id}">Agregar</button>
-            </div>
-        `;
+        productosElegidos.forEach(producto => {
+            const div = document.createElement("div");
+            div.classList.add("producto");
+            div.innerHTML = `
+                <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
+                <div class="producto-detalles">
+                    <h3 class="producto-titulo">${producto.titulo}</h3>
+                    <p class="producto-precio">$${producto.precio}</p>
+                    <button class="producto-agregar" id="${producto.id}">Agregar</button>
+                </div>
+            `;
 
-        contenedorProductos.append(div);
-    });
+            contenedorProductos.append(div);
+        });
 
-    actualizarBotonesAgregar(); // Actualizar eventos de los botones "Agregar"
+        actualizarBotonesAgregar(); // Actualizar eventos de los botones "Agregar"
+    }
+}
+
+// Función para mostrar mensaje de "No hay productos"
+function mostrarMensajeNoProductos() {
+    contenedorProductos.innerHTML = '<p class="mensaje-no-productos">No hay productos disponibles.</p>';
 }
 
 // Función para filtrar productos según el término de búsqueda

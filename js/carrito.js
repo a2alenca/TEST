@@ -129,7 +129,7 @@ function actualizarTotal() {
 botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
     const mensaje = generarMensajeWhatsApp();
-    const numeroWhatsApp = '920449772';
+    const numeroWhatsApp = '+56920449772';
     const url = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
     window.open(url, '_blank');
 

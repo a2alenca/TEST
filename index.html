@@ -4,16 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CarpiShop</title>
+    <title>La Correria</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./css/main.css">
+    <style>
+        /* Estilos para el botón de WhatsApp */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: #fff;
+            border: none;
+            padding: 10px; /* Ajusta el padding según el tamaño deseado */
+            border-radius: 50%;
+            font-size: 20px; /* Ajusta el tamaño del ícono */
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-btn i {
+            vertical-align: middle;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+    </style>
 </head>
 <body>
 
     <div class="wrapper">
         <header class="header-mobile">
-            <h1 class="logo">CarpiShop</h1>
+            <h1 class="logo">La Correria</h1>
             <button class="open-menu" id="open-menu">
                 <i class="bi bi-list"></i>
             </button>
@@ -23,21 +48,21 @@
                 <i class="bi bi-x"></i>
             </button>
             <header>
-                <h1 class="logo">CarpiShop</h1>
+                <h1 class="logo">La Correria</h1>
             </header>
             <nav>
                 <ul class="menu">
                     <li>
-                        <button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Todos los productos</button>
+                        <button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Catalogo completo</button>
                     </li>
                     <li>
-                        <button id="abrigos" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Abrigos</button>
+                        <button id="abrigos" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>Correas 20mm</button>
                     </li>
                     <li>
-                        <button id="camisetas" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Camisetas</button>
+                        <button id="camisetas" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Biseles </button>
                     </li>
                     <li>
-                        <button id="pantalones" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Pantalones</button>
+                        <button id="pantalones" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Otros </button>
                     </li>
                     <li>
                         <a class="boton-menu boton-carrito" href="./carrito.html">
@@ -47,7 +72,7 @@
                 </ul>
             </nav>
             <footer>
-                <p class="texto-footer">© 2022 Carpi Coder</p>
+                <p class="texto-footer">© 2024 La Correria</p>
             </footer>
         </aside>
         <main>
@@ -55,12 +80,18 @@
                 <input type="text" id="searchInput" placeholder="Buscar productos...">
                 <button onclick="buscar()">Buscar</button>
             </div>
+            <h2>‎ </h2>
             <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
             <div id="contenedor-productos" class="contenedor-productos">
                 <!-- Esto se va a rellenar con JS -->
             </div>
         </main>
     </div>
+
+    <!-- Botón de WhatsApp -->
+    <a class="whatsapp-btn" href="https://wa.me/56920449772" target="_blank">
+        <i class="bi bi-whatsapp" style="font-size: 24px;"></i> <!-- Ajusta el tamaño del ícono aquí -->
+    </a>
     
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/main.js"></script>

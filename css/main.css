@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-    --clr-main: #4b33a8;
-    --clr-main-light: #785ce9;
-    --clr-white: #ececec;
-    --clr-gray: #e2e2e2;
+    --clr-main: #000; /* Texto principal en negro */
+    --clr-white: #fff; /* Fondo blanco */
+    --clr-gray: #ccc; /* Gris claro para algunos elementos */
     --clr-red: #961818;
 }
 
@@ -13,11 +12,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
+    color: var(#fff); /* Color de texto principal */
 }
 
 h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
     margin: 0;
     padding: 0;
+    color: var(--clr-main); /* Aseguramos que todos los textos sean negros */
 }
 
 ul {
@@ -31,19 +32,20 @@ a {
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    background-color: var(--clr-main);
+    background-color: var(--clr-white); /* Fondo blanco */
 }
 
 aside {
     padding: 2rem;
     padding-right: 0;
-    color: var(--clr-white);
+    color: var(--clr-main);
     position: sticky;
     top: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-color: var(--clr-white); /* Fondo blanco */
 }
 
 .logo {
@@ -60,7 +62,7 @@ aside {
 .boton-menu {
     background-color: transparent;
     border: 0;
-    color: var(--clr-white);
+    color: var(--clr-main);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -72,35 +74,15 @@ aside {
 }
 
 .boton-menu.active {
-    background-color: var(--clr-white);
-    color: var(--clr-main);
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+    background-color: var(--clr-white); /* Fondo blanco */
+    color: var(--clr-main); /* Texto negro */
+    border-radius: 0.5rem;
     position: relative;
 }
 
-.boton-menu.active::before {
-    content: '';
-    position: absolute;
-    width: 1rem;
-    height: 2rem;
-    bottom: 100%;
-    right: 0;
-    background-color: transparent;
-    border-bottom-right-radius: .5rem;
-    box-shadow: 0 1rem 0 var(--clr-white);
-}
-
+.boton-menu.active::before,
 .boton-menu.active::after {
-    content: '';
-    position: absolute;
-    width: 1rem;
-    height: 2rem;
-    top: 100%;
-    right: 0;
-    background-color: transparent;
-    border-top-right-radius: .5rem;
-    box-shadow: 0 -1rem 0 var(--clr-white);
+    display: none;
 }
 
 .boton-menu > i.bi-hand-index-thumb-fill,
@@ -125,12 +107,12 @@ aside {
 }
 
 .texto-footer {
-    color: var(--clr-main-light);
+    color: var(--clr-main);
     font-size: .85rem;
 }
 
 main {
-    background-color: var(--clr-white);
+    background-color: var(--clr-white); /* Fondo blanco */
     margin: 1rem;
     margin-left: 0;
     border-radius: 2rem;
@@ -154,11 +136,11 @@ main {
 }
 
 .producto-detalles {
-    background-color: var(--clr-main);
-    color: var(--clr-white);
+    background-color: var(--clr-white); /* Fondo blanco */
+    color: var(--clr-main); /* Texto negro */
     padding: .5rem;
     border-radius: 1rem;
-    margin-top: -2rem;
+    margin-top: 0rem;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -167,17 +149,23 @@ main {
 
 .producto-titulo {
     font-size: 1rem;
+    color: var(--clr-main); /* Texto negro */
+}
+
+.producto-precio {
+    font-size: 0.85rem; /* Tamaño de fuente más pequeño para precios */
+    color: var(--clr-main); /* Texto negro */
 }
 
 .producto-agregar {
     border: 0;
-    background-color: var(--clr-white);
-    color: var(--clr-main);
+    background-color: var(#000);
+    color: var(#fff);
     padding: .4rem;
     text-transform: uppercase;
     border-radius: 2rem;
     cursor: pointer;
-    border: 2px solid var(--clr-white);
+    border: 2px solid var(#000);
     transition: background-color .2s, color .2s;
 }
 
@@ -210,8 +198,8 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--clr-gray);
-    color: var(--clr-main);
+    background-color: var(#fff); /* Fondo gris claro */
+    color: var(--clr-main); /* Texto negro */
     padding: .5rem;
     padding-right: 1.5rem;
     border-radius: 1rem;
@@ -224,6 +212,7 @@ main {
 
 .carrito-producto small {
     font-size: .75rem;
+    color: var(--clr-main); /* Texto negro */
 }
 
 .carrito-producto-eliminar {
@@ -240,7 +229,7 @@ main {
 
 .carrito-acciones-vaciar {
     border: 0;
-    background-color: var(--clr-gray);
+    background-color: var();
     padding: 1rem;
     border-radius: 1rem;
     color: var(--clr-main);
@@ -306,12 +295,13 @@ main {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+    
     }
 
     aside {
         position: fixed;
         z-index: 9;
-        background-color: var(--clr-main);
+        background-color: var(#fff);
         left: 0;
         box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .75);
         transform: translateX(-100%);
@@ -349,12 +339,12 @@ main {
     }
 
     .header-mobile .logo {
-        color: var(--clr-gray);
+        color: var(#);
     }
 
     .open-menu, .close-menu {
         background-color: transparent;
-        color: var(--clr-gray);
+        color: var(#000);
         border: 0;
         font-size: 2rem;
         cursor: pointer;
@@ -419,7 +409,7 @@ main {
 .buscar button {
     padding: 9px 12px; /* Espaciado interno del botón */
     font-size: 14x; /* Tamaño de la fuente */
-    background-color: #8a2be2; /* Color de fondo del botón morado */
+    background-color: #000; /* Color de fondo del botón morado */
     color: white; /* Color del texto del botón */
     border: none; /* Sin borde */
     border-radius: 0 20px 20px 0; /* Bordes redondeados */

@@ -38,6 +38,30 @@
             width: 200px;
             height: 70px;
         }
+
+        /* Estilos para el botón del carrito */
+        .carrito-btn {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: #05029c;
+            color: #fff;
+            border: none;
+            padding: 10px; /* Ajusta el padding según el tamaño deseado */
+            border-radius: 50%;
+            font-size: 20px; /* Ajusta el tamaño del ícono */
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .carrito-btn i {
+            vertical-align: middle;
+        }
+
+        .carrito-btn:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -100,6 +124,11 @@
     <!-- Botón de WhatsApp -->
     <a class="whatsapp-btn" href="https://wa.me/56920449772" target="_blank">
         <i class="bi bi-whatsapp" style="font-size: 24px;"></i> <!-- Ajusta el tamaño del ícono aquí -->
+    </a>
+
+    <!-- Botón del carrito -->
+    <a class="carrito-btn" href="./carrito.html">
+        <i class="bi bi-cart-fill" style="font-size: 24px;"></i> <!-- Ajusta el tamaño del ícono aquí -->
     </a>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

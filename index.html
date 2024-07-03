@@ -32,13 +32,20 @@
         .whatsapp-btn:hover {
             background-color: #128C7E;
         }
+
+        /* Estilos para el tamaño del logo */
+        .logo img {
+            width: 200px;
+            height: 70px;
+        }
     </style>
 </head>
 <body>
-
     <div class="wrapper">
         <header class="header-mobile">
-            <h1 class="logo">La Correria</h1>
+            <div class="logo">
+                <img src="img/Logo.png" alt="Logo de La Correria" />
+            </div>
             <button class="open-menu" id="open-menu">
                 <i class="bi bi-list"></i>
             </button>
@@ -48,7 +55,9 @@
                 <i class="bi bi-x"></i>
             </button>
             <header>
-                <h1 class="logo">La Correria</h1>
+                <div class="logo">
+                    <img src="img/Logo.png" alt="Logo de La Correria" />
+                </div>
             </header>
             <nav>
                 <ul class="menu">
@@ -56,7 +65,7 @@
                         <button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Catalogo completo</button>
                     </li>
                     <li>
-                        <button id="abrigos" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>Correas 20mm</button>
+                        <button id="abrigos" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Correas 20mm</button>
                     </li>
                     <li>
                         <button id="camisetas" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Biseles </button>
@@ -92,7 +101,7 @@
     <a class="whatsapp-btn" href="https://wa.me/56920449772" target="_blank">
         <i class="bi bi-whatsapp" style="font-size: 24px;"></i> <!-- Ajusta el tamaño del ícono aquí -->
     </a>
-    
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/menu.js"></script>

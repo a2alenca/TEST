@@ -120,5 +120,55 @@
         "precio": 4990
 
   
+    },
+    {
+        "id": "Apple 42-44-45-49mm",
+        "titulo": "Apple 42-44-45-49mm Negra",
+        "imagen": "./img/Apple 42-44-45-49mm/01.jpg",
+        "categoria": {
+            "nombre": "Apple 42-44-45-49mm",
+            "id": "Apple 42-44-45-49mm"
+        },
+        "precio": 4990
+    },
+    {
+        "id": "Apple 42-44-45-49mm",
+        "titulo": "Apple 42-44-45-49mm Blanca",
+        "imagen": "./img/Apple 42-44-45-49mm/02.jpg",
+        "categoria": {
+            "nombre": "Apple 42-44-45-49mm",
+            "id": "Apple 42-44-45-49mm"
+        },
+        "precio": 4990
+    },
+    {
+        "id": "Apple 42-44-45-49mm",
+        "titulo": "Apple 42-44-45-49mm Rosa Palo",
+        "imagen": "./img/Apple 42-44-45-49mm/03.jpg",
+        "categoria": {
+            "nombre": "Apple 42-44-45-49mm",
+            "id": "Apple 42-44-45-49mm"
+        },
+        "precio": 4990
+    },
+    {
+        "id": "Apple 42-44-45-49mm",
+        "titulo": "Apple 42-44-45-49mm Blanco Invierno",
+        "imagen": "./img/Apple 42-44-45-49mm/04.jpg",
+        "categoria": {
+            "nombre": "Apple 42-44-45-49mm",
+            "id": "Apple 42-44-45-49mm"
+        },
+        "precio": 4990
+    },
+    {
+        "id": "Apple 42-44-45-49mm",
+        "titulo": "Apple 42-44-45-49mm Purpura Humo",
+        "imagen": "./img/Apple 42-44-45-49mm/05.jpg",
+        "categoria": {
+            "nombre": "Apple 42-44-45-49mm",
+            "id": "Apple 42-44-45-49mm"
+        },
+        "precio": 4990
     }
 ]

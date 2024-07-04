@@ -12,7 +12,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
-    color: var(#fff); /* Color de texto principal */
+    color: var(--clr-white); /* Color de texto principal */
 }
 
 h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
@@ -131,7 +131,7 @@ main {
 }
 
 .producto-imagen {
-    max-width: 100%;
+    max-width: 90%;
     border-radius: 1rem;
 }
 
@@ -159,13 +159,13 @@ main {
 
 .producto-agregar {
     border: 0;
-    background-color: var(#000);
-    color: var(#fff);
+    background-color: var(--clr-main);
+    color: var(--clr-white);
     padding: .4rem;
     text-transform: uppercase;
     border-radius: 2rem;
     cursor: pointer;
-    border: 2px solid var(#000);
+    border: 2px solid var(--clr-main);
     transition: background-color .2s, color .2s;
 }
 
@@ -198,7 +198,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(#fff); /* Fondo gris claro */
+    background-color: var(--clr-white); /* Fondo gris claro */
     color: var(--clr-main); /* Texto negro */
     padding: .5rem;
     padding-right: 1.5rem;
@@ -229,7 +229,7 @@ main {
 
 .carrito-acciones-vaciar {
     border: 0;
-    background-color: var();
+    background-color: transparent;
     padding: 1rem;
     border-radius: 1rem;
     color: var(--clr-main);
@@ -301,7 +301,7 @@ main {
     aside {
         position: fixed;
         z-index: 9;
-        background-color: var(#fff);
+        background-color: var(--clr-white);
         left: 0;
         box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .75);
         transform: translateX(-100%);
@@ -339,12 +339,12 @@ main {
     }
 
     .header-mobile .logo {
-        color: var(#);
+        color: var(--clr-main);
     }
 
     .open-menu, .close-menu {
         background-color: transparent;
-        color: var(#000);
+        color: var(--clr-main);
         border: 0;
         font-size: 2rem;
         cursor: pointer;
@@ -395,7 +395,7 @@ main {
 
 .buscar button {
     padding: 9px 12px; /* Espaciado interno del botón */
-    font-size: 14x; /* Tamaño de la fuente */
+    font-size: 14px; /* Tamaño de la fuente */
     background-color: #000; /* Color de fondo del botón morado */
     color: white; /* Color del texto del botón */
     border: none; /* Sin borde */

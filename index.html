@@ -62,6 +62,18 @@
         .carrito-btn:hover {
             background-color: #0056b3;
         }
+
+        /* Estilos para los nuevos botones de búsqueda */
+        .botones-busqueda {
+            margin-top: 10px;
+        }
+
+        .botones-busqueda button {
+            margin-right: 10px;
+            padding: 5px 10px; /* Tamaño reducido */
+            font-size: 14px; /* Tamaño de fuente reducido */
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -95,7 +107,7 @@
                         <button id="Apple 42-44-45-49mm" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i>Apple 42-44-45-49mm</button>
                     </li>
                     <li>
-                        <button id=" Otros " class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Otros </button>
+                        <button id="Otros" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> Otros </button>
                     </li>
                     <li>
                         <a class="boton-menu boton-carrito" href="./carrito.html">
@@ -113,6 +125,14 @@
                 <input type="text" id="searchInput" placeholder="Buscar productos...">
                 <button onclick="buscar()">Buscar</button>
             </div>
+
+            <!-- Nuevos botones debajo del buscador -->
+            <div class="botones-busqueda">
+                <button id="boton-todos">Catálogo completo</button>
+                <button id="boton-20mm">20mm</button>
+                <button id="boton-apple">Apple</button>
+            </div>
+
             <h2>‎ </h2>
             <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
             <div id="contenedor-productos" class="contenedor-productos">
@@ -134,5 +154,19 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/menu.js"></script>
+    <script>
+        // JavaScript para simular clic en los botones del menú
+        document.getElementById('boton-todos').addEventListener('click', function() {
+            document.getElementById('todos').click();
+        });
+
+        document.getElementById('boton-20mm').addEventListener('click', function() {
+            document.getElementById('Correas-20mm').click();
+        });
+
+        document.getElementById('boton-apple').addEventListener('click', function() {
+            document.getElementById('Apple 42-44-45-49mm').click();
+        });
+    </script>
 </body>
 </html>
